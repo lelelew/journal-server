@@ -4,6 +4,7 @@
   "description": "API for journal",
   "main": "index.js",
   "scripts": {
+    "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/lelelew/journal-server/issues"
   },
-  "homepage": "https://github.com/lelelew/journal-server#readme"
+  "homepage": "https://github.com/lelelew/journal-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
+  }
 }
