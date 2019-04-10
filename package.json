@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/lelelew/journal-server#readme",
   "dependencies": {
+    "@useful/postgresql-js-only": "^0.3.1",
     "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "pg": "^7.9.0"
   },
