@@ -1,16 +1,24 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const { getEntry } = require("./database.js");
+const { getEntry, saveEntry } = require("./database.js");
 
 const app = express();
 const port = 4000;
 
 app.use(cors());
+app.use(express.json());
 
 app.get("/", async (request, response, next) => {
   const date = request.query.date;
   const entry = await getEntry(date);
+  response.json(entry);
+});
+
+app.post("/entries/new", async (request, response, next) => {
+  const entry = request.body;
+  console.log(entry);
+  saveEntry(entry);
   response.json(entry);
 });
 
