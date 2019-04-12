@@ -5,6 +5,11 @@ module.exports.getEntry = async date => {
   return result.rows[0];
 };
 
+module.exports.getAllEntries = async () => {
+  const result = await query("select * from entries");
+  return result.rows;
+};
+
 module.exports.saveEntry = async entry => {
   const result = await query(
     "insert into entries(wins, lessons_learned) values($1, $2)",
