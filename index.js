@@ -24,7 +24,9 @@ app.post("/entries/new", async (request, response, next) => {
   const entry = request.body;
   console.log(entry);
   saveEntry(entry);
-  response.json(entry);
+  setTimeout(function() {
+    response.json(entry);
+  }, 1000);
 });
 
 app.listen(port, () =>

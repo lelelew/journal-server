@@ -12,8 +12,8 @@ module.exports.getAllEntries = async () => {
 
 module.exports.saveEntry = async entry => {
   const result = await query(
-    "insert into entries(wins, lessons_learned) values($1, $2)",
-    [entry.wins, entry.lessonsLearned]
+    "insert into entries(goals, wins, lessons_learned) values($1, $2, $3)",
+    [entry.goals, entry.wins, entry.lessonsLearned]
   );
   console.log(result);
   return result;
