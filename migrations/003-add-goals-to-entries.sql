@@ -1,1 +1,0 @@
-alter table entries add column goals character varying(10000)

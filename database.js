@@ -7,7 +7,14 @@ module.exports.getEntry = async date => {
 
 module.exports.getAllEntries = async () => {
   const result = await query("select * from entries");
-  return result.rows;
+
+  const mappedResult = result.rows.map(entry => ({
+    goals: entry.goals,
+    wins: entry.wins,
+    lessonsLearned: entry.lessons_learned,
+    id: entry.id
+  }));
+  return mappedResult;
 };
 
 module.exports.saveEntry = async entry => {
