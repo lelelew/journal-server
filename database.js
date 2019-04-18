@@ -18,10 +18,19 @@ module.exports.getAllEntries = async () => {
 };
 
 module.exports.saveEntry = async entry => {
-  const result = await query(
-    "insert into entries(goals, wins, lessons_learned) values($1, $2, $3)",
-    [entry.goals, entry.wins, entry.lessonsLearned]
-  );
+  let result;
+  if (entry.id) {
+    result = await query(
+      "update entries set goals=$2, wins=$3, lessons_learned=$4 where id=$1",
+      [entry.id, entry.goals, entry.wins, entry.lessonsLearned]
+    );
+  } else {
+    result = await query(
+      "insert into entries(goals, wins, lessons_learned) values($1, $2, $3)",
+      [entry.goals, entry.wins, entry.lessonsLearned]
+    );
+  }
+
   console.log(result);
   return result;
 };
