@@ -1,0 +1,1 @@
+alter table entries add column todays_targets jsonb;

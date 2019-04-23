@@ -1,0 +1,1 @@
+alter table entries add column morning_grateful jsonb;
