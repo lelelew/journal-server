@@ -1,9 +1,12 @@
 const { query } = require("@useful/postgresql-js-only");
 const dayjs = require("dayjs");
+const formatEntryFromDatabase = require("./lib/formatEntryFromDatabase.js");
 
 module.exports.getEntry = async date => {
-  const result = await query("select * from entries where id = $1", [date]);
-  return result.rows[0];
+  const result = await query("select * from entries where entry_date = $1", [
+    date
+  ]);
+  return formatEntryFromDatabase(result.rows[0]);
 };
 
 module.exports.getAllEntries = async () => {
@@ -11,17 +14,7 @@ module.exports.getAllEntries = async () => {
 
   console.log(result.rows);
 
-  const mappedResult = result.rows.map(entry => ({
-    goals: entry.goals,
-    wins: entry.wins,
-    lessonsLearned: entry.lessons_learned,
-    morningGrateful: entry.morning_grateful ? entry.morning_grateful : [],
-    todaysTargets: entry.todays_targets ? entry.todays_targets : [],
-    eveningGrateful: entry.evening_grateful ? entry.evening_grateful : [],
-    entryDate: dayjs(entry.entry_date).format("YYYY-MM-DD"),
-
-    id: entry.id
-  }));
+  const mappedResult = result.rows.map(formatEntryFromDatabase);
   return mappedResult;
 };
 

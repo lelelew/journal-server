@@ -10,7 +10,7 @@ const port = 4000;
 app.use(cors());
 app.use(express.json());
 
-app.get("/", async (request, response, next) => {
+app.get("/entry", async (request, response, next) => {
   const date = request.query.date;
   const entry = await getEntry(date);
   response.json(entry);
