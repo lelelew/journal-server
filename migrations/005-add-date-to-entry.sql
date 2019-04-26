@@ -1,0 +1,1 @@
+alter table entries add column entry_date date;
