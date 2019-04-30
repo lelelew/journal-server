@@ -4,9 +4,8 @@ var quotes = [
     source: "Oscar Wilde"
   },
   {
-    quote:
-      "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.",
-    source: "Albert Einstein"
+    quote: "The way to get started is to quit talking and begin doing.",
+    source: "Walt Disney"
   },
   {
     quote:
@@ -15,32 +14,32 @@ var quotes = [
   },
   {
     quote:
-      "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.",
-    source: "J.K. Rowling"
+      "The pessimist sees difficulty in every opportunity. The optimist sees opportunity in every difficulty.",
+    source: "Winston Churchill"
   },
   {
-    quote: "If you tell the truth, you don't have to remember anything.",
-    source: "Mark Twain"
-  },
-  {
-    quote:
-      "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
-    source: "Maya Angelou"
+    quote: "Don't let yesterday take up too much of today.",
+    source: "Will Rogers"
   },
   {
     quote:
-      "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that.",
-    source: "Martin Luther King Jr."
+      "You learn more from failure than from success. Don't let it stop you. Failure builds character.",
+    source: "Unknown"
   },
   {
     quote:
-      "The person, be it gentleman or lady, who has not pleasure in a good novel, must be intolerably stupid.",
-    source: "Jane Austen"
+      "If you are working on something that you really care about, you don't have to be pushed. The vision pulls you.",
+    source: "Steve Jobs"
   },
   {
     quote:
-      "It is better to remain silent at the risk of being thought a fool, than to talk and remove all doubt of it.",
-    source: "Maurice Switzer"
+      "People who are crazy enough to think they can change the world, are the ones who do.",
+    source: "Rob Siltanen"
+  },
+  {
+    quote:
+      "Failure will never overtake me if my determination to succeed is strong enough.",
+    source: "Og Mandino"
   },
   {
     quote: "I have not failed. I've just found 10,000 ways that won't work.",
