@@ -1,4 +1,6 @@
-var quotes = [
+import { Quote } from "./types";
+
+const quotes: Array<Quote> = [
   {
     quote: "Be yourself; everyone else is already taken.",
     source: "Oscar Wilde"
@@ -47,7 +49,7 @@ var quotes = [
   }
 ];
 
-module.exports.newQuote = function newQuote() {
-  const randomNumber = Math.floor(Math.random() * quotes.length);
+export const newQuote: () => Quote = function() {
+  const randomNumber: number = Math.floor(Math.random() * quotes.length);
   return quotes[randomNumber];
 };

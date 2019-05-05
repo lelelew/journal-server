@@ -1,15 +1,16 @@
-const { query } = require("@useful/postgresql-js-only");
-const dayjs = require("dayjs");
-const formatEntryFromDatabase = require("./lib/formatEntryFromDatabase.js");
+import { query } from "@useful/postgresql-js-only";
+import formatEntryFromDatabase from "./lib/formatEntryFromDatabase";
+import { Entry, DatabaseEntryQueryResult } from "./types";
 
-module.exports.getEntry = async date => {
-  const result = await query("select * from entries where entry_date = $1", [
-    date
-  ]);
+export const getEntry: (date: string) => Promise<Entry> = async date => {
+  const result: DatabaseEntryQueryResult = await query(
+    "select * from entries where entry_date = $1",
+    [date]
+  );
   return formatEntryFromDatabase(result.rows[0]);
 };
 
-module.exports.getAllEntries = async () => {
+export const getAllEntries: () => Promise<Array<Entry>> = async () => {
   const result = await query("select * from entries");
 
   console.log(result.rows);
@@ -18,7 +19,9 @@ module.exports.getAllEntries = async () => {
   return mappedResult;
 };
 
-module.exports.saveEntry = async entry => {
+export const saveEntry: (
+  Entry
+) => Promise<DatabaseEntryQueryResult> = async entry => {
   let result;
   console.log(entry);
   if (entry.id) {

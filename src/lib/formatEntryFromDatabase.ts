@@ -1,6 +1,7 @@
-const dayjs = require("dayjs");
+import dayjs from "dayjs";
+import { Entry, DatabaseEntry } from "../types";
 
-module.exports = formatEntryFromDatabase = entry => ({
+const formatEntryFromDatabase: (DatabaseEntry) => Entry = entry => ({
   goals: entry.goals,
   wins: entry.wins,
   lessonsLearned: entry.lessons_learned,
@@ -10,3 +11,5 @@ module.exports = formatEntryFromDatabase = entry => ({
   entryDate: dayjs(entry.entry_date).format("YYYY-MM-DD"),
   id: entry.id
 });
+
+export default formatEntryFromDatabase;

@@ -3,7 +3,7 @@ const { migrate } = require("@useful/postgresql-js-only");
 const fs = require("fs");
 const path = require("path");
 
-const fileNames = fs.readdirSync("./migrations");
+const fileNames = fs.readdirSync("../migrations");
 console.log(fileNames);
 
 const migrations = fileNames.map(function(fileName) {
