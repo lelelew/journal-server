@@ -23,7 +23,7 @@ app.get("/entries", async (request, response, next) => {
 
 app.get("/quote", (request, response, next) => {
   const quote: Quote = newQuote();
-  response.json({ quote });
+  response.json(quote);
 });
 
 app.post("/entries/new", async (request, response, next) => {
